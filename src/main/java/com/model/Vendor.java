@@ -1,17 +1,17 @@
 package com.model;
 
-public class Category {
+public class Vendor {
     private int id;
     private String name;
-    private String description;
+    private String email;
 
-    public Category() {
+    public Vendor() {
     }
 
-    public Category(int id, String name, String description) {
+    public Vendor(int id, String name, String email) {
         this.id = id;
         this.name = name;
-        this.description = description;
+        this.email = email;
     }
 
     public int getId() {
@@ -30,20 +30,20 @@ public class Category {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "Vendor{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
