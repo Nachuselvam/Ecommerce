@@ -5,7 +5,9 @@ import com.dto.ProductDto;
 import com.model.Product;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ProductService {
@@ -27,5 +29,9 @@ public class ProductService {
 
     public void updateStockQuantity(int productId, int newStockQuantity) {
         productRepository.updateStockQuantity(productId,newStockQuantity);
+    }
+
+    public Map<String, Integer> countProductsByVendor() throws SQLException {
+        return productRepository.countProductsByVendor();
     }
 }

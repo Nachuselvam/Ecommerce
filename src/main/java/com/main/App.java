@@ -11,6 +11,8 @@ import com.service.VendorService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.sql.SQLException;
+import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -82,6 +84,21 @@ public class App {
                     int newStockQuantity = sc.nextInt();
                     productService.updateStockQuantity(productId,newStockQuantity);
                     System.out.println("Stock Updated Successfully");
+                    break;
+                }
+                case 4 ->{
+                    try{
+                        Map<String,Integer> map = productService.countProductsByVendor();
+                        map.forEach((vendorName, count) ->
+                                System.out.println(vendorName + " → " + count)
+                        );
+                    }
+                    catch (SQLException e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+                default -> {
+                    System.out.println("Invalid Option");
                     break;
                 }
             }
