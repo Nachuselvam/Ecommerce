@@ -1,6 +1,7 @@
 package com.main;
 
 import com.config.AppConfig;
+import com.dto.ProductDto;
 import com.model.Category;
 import com.model.Product;
 import com.model.Vendor;
@@ -66,6 +67,12 @@ public class App {
                     productService.saveProduct(product);
                     System.out.println("-------------------------------------------------");
                     break;
+                }
+                case 2 ->{
+                    System.out.println("Enter the Product ID");
+                    int productId = sc.nextInt();
+                    ProductDto productdto = productService.getProductById(productId).getFirst();
+                    System.out.println(productdto);
                 }
             }
         }
