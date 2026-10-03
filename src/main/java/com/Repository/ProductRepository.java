@@ -40,4 +40,9 @@ public class ProductRepository {
                     """;
         return jdbcTemplate.query(sql,productMapper,productId);
     }
+
+    public void updateStockQuantity(int productId, int newStockQuantity) {
+        String sql = "update Product set stockQuantity = ? where id = ?";
+        jdbcTemplate.update(sql,newStockQuantity,productId);
+    }
 }

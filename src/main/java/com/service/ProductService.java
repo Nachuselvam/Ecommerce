@@ -24,4 +24,8 @@ public class ProductService {
     public List<ProductDto> getProductById(int productId) {
         return productRepository.getProductById(productId);
     }
+
+    public void updateStockQuantity(int productId, int newStockQuantity) {
+        productRepository.updateStockQuantity(productId,newStockQuantity);
+    }
 }

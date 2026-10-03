@@ -73,6 +73,16 @@ public class App {
                     int productId = sc.nextInt();
                     ProductDto productdto = productService.getProductById(productId).getFirst();
                     System.out.println(productdto);
+                    break;
+                }
+                case 3 ->{
+                    System.out.println("Enter the Product ID");
+                    int productId = sc.nextInt();
+                    System.out.println("Enter the New Quantity:");
+                    int newStockQuantity = sc.nextInt();
+                    productService.updateStockQuantity(productId,newStockQuantity);
+                    System.out.println("Stock Updated Successfully");
+                    break;
                 }
             }
         }
